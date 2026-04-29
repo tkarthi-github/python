@@ -11,6 +11,10 @@ def play_guessing_game(min_val, max_val, max_attempts, secret_number):
 
     logFileName = str(dt.datetime.now().strftime("%Y-%m-%d_%H-%M-%S")) + ".txt"
     with open(logFileName, "w") as log_file:
+        player_name = input(f"Please enter your name -> ")
+        print(end="")
+        print(f"Welcome to Number Guessing Game! Ms/Mrs. {player_name}")
+        log_file.write(f"Player Name: {player_name}\n")
         while attempt_count < max_attempts:
             user_input_str = input(f"Enter a number ({min_val}-{max_val}) -> ")
             try:
